@@ -6,19 +6,19 @@ import (
 	"net/http"
 )
 
-func Greet(w http.ResponseWriter, r *http.Request) {
+func Home(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
-	w.Write([]byte("<html><body>Hello, world</body></html>"))
+	w.Write([]byte("<html><body><a href=\"https://renovatio-design.vercel.app/\">Renovatio </a></body></html>"))
 
-	log.Printf("%s -- /api/greet", r.Method)
+	log.Printf("%s -- /", r.Method)
 }
 
 func main() {
 	mux := http.NewServeMux()
 
-	mux.HandleFunc("/api/greet", Greet)
+	mux.HandleFunc("/api", Home)
 
-	log.Print("-- Server running on http://localhost:8000/")
+	log.Print("-- Server running on PORT:8000")
 	err := http.ListenAndServe(":8000", mux)
 
 	if errors.Is(err, http.ErrServerClosed) {
