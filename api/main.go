@@ -16,7 +16,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 func main() {
 	mux := http.NewServeMux()
 
-	mux.HandleFunc("/api", Home)
+	mux.HandleFunc("/", Home)
 
 	log.Print("-- Server running on PORT:8000")
 	err := http.ListenAndServe(":8000", mux)
