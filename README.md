@@ -17,5 +17,5 @@ $ air
 ## Running tests
 
 ```bash
-$ go test -v .
+$ go test -v ./tests
 ```

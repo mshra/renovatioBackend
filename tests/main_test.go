@@ -4,6 +4,8 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/mshra/renovatioBackend"
 )
 
 const (
@@ -15,7 +17,7 @@ func TestRoot(t *testing.T) {
 		request := httptest.NewRequest(http.MethodGet, "/", nil)
 		responseRecorder := httptest.NewRecorder()
 
-		Home(responseRecorder, request)
+		renovatioBackend.Home(responseRecorder, request)
 
 		response := responseRecorder.Body.String()
 
