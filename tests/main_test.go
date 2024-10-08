@@ -1,11 +1,11 @@
-package main
+package tests
 
 import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
 
-	"github.com/mshra/renovatioBackend"
+	"github.com/mshra/renovatioBackend/handlers"
 )
 
 const (
@@ -17,7 +17,7 @@ func TestRoot(t *testing.T) {
 		request := httptest.NewRequest(http.MethodGet, "/", nil)
 		responseRecorder := httptest.NewRecorder()
 
-		renovatioBackend.Home(responseRecorder, request)
+		handlers.Home(responseRecorder, request)
 
 		response := responseRecorder.Body.String()
 
