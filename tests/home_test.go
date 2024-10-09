@@ -11,6 +11,7 @@ import (
 func TestRoot(t *testing.T) {
 	t.Run("testing root endpoint", func(t *testing.T) {
 		const requiredResponse = "<html><body><a href=\"https://renovatio-design.vercel.app/\">Renovatio </a></body></html>"
+
 		request := httptest.NewRequest(http.MethodGet, "/", nil)
 		responseRecorder := httptest.NewRecorder()
 
@@ -29,7 +30,7 @@ func TestRoot(t *testing.T) {
 		handlers.Home(responseRecorder, request)
 
 		if responseRecorder.Result().Status != "405 Method Not Allowed" {
-			t.Errorf("got: %s | want: %s", responseRecorder.Result().Status, http.StatusText(http.StatusMethodNotAllowed))
+			t.Error("Endpoint allowing other HTTP methods than GET.")
 		}
 	})
 }
