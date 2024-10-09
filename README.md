@@ -18,7 +18,7 @@ alias air='$(go env GOPATH)/bin/air'
 $ air -c .air.toml
 ```
 
-3. This will start a dev server with live reloading enabled on [http://localhost:8000/](http://localhost:8000/)
+4. This will start a dev server with live reloading enabled on [http://localhost:8000/](http://localhost:8000/)
 
 ## Running tests
 
